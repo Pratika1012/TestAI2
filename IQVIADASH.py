@@ -215,7 +215,7 @@ def main():
             # chat_interface(extracted_text)
 
             def convert_pdf_to_img(pdf_file):
-                return convert_from_path(pdf_file)
+                return convert_from_path(pdf_file, path)
 
 
             def convert_image_to_text(file):  
@@ -225,7 +225,7 @@ def main():
 
             def get_text_from_any_pdf(pdf_file, path):
                 
-                images = convert_pdf_to_img(pdf_file, path)
+                images = convert_pdf_to_img(pdf_file)
                 final_text = ""
                 for pg, img in enumerate(images):
                     
