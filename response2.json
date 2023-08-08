@@ -1,0 +1,52 @@
+{
+  "REACTION INFORMATION": {
+    "PATIENT INITIALS": "MIHIR",
+    "COUNTRY": "INDIA",
+    "DATE OF BIRTH": {
+      "Day": "11",
+      "Month": "NOV",
+      "Year": "2001"
+    },
+    "AGE": {
+      "Years": "22"
+    },
+    "SEX": "MALE",
+    "REACTION ONSET": {
+      "Day": "",
+      "Month": "",
+      "Year": ""
+    }
+  },
+  "DESCRIBE REACTION(S)": "A 78-year-old male patient with high blood pressure, dyslipidemia, diabetes mellitus, and a recent diagnosis of essential thrombosis reported of having recently suffered from nausea, tachycardia, tremor, loss of appetite, memory loss, and a significant decrease in his vision",
+  "CHECK ALL APPROPRIATE TO ADVERSE REACTION": {
+    "PATIENT DIED": false,
+    "INVOLVED OR PROLONGED INPATIENT HOSPITALISATION": false,
+    "INVOLVED PERSISTENCE OR SIGNIFICANT DISABILITY OR INCAPACITY": false,
+    "LIFE THREATENING": false
+  },
+  "SUSPECT DRUG(S) INFORMATION": {
+    "SUSPECT DRUG(S)": "Elanapril, Omeprazole",
+    "DAILY DOSE(S)": "20",
+    "ROUTE(S) OF ADMINISTRATION": "",
+    "INDICATION(S) FOR USE": "",
+    "DID REACTION ABATE AFTER STOPPING DRUG?": "NA",
+    "DID REACTION REAPPEAR AFTER REINTRODUCTION?": "NA",
+    "THERAPY DATES (from/to)": {
+      "From": "July 25, 2023",
+      "To": "Aug 25, 2023"
+    },
+    "THERAPY DURATION": "1 Month"
+  },
+  "CONCOMITANT DRUG(S) AND HISTORY": {
+    "CONCOMITANT DRUG(S) AND DATES OF ADMINISTRATION": "",
+    "OTHER RELEVANT HISTORY (e.g. diagnostics, allergics, pregnancy with last month of period, etc.)": "He was referred for the first time to the Medicines Optimization Unit of a hospital in Costa Rica"
+  },
+  "MANUFACTURER INFORMATION": {
+    "NAME AND ADDRESS OF MANUFACTURER": "PFIZER",
+    "MFR CONTROL NO.": "",
+    "DATE RECEIVED BY MANUFACTURER": "20th July,2023",
+    "DATE OF THIS REPORT": "25th July, 2023",
+    "REPORT SOURCE": "",
+    "REPORT TYPE": "INITIAL"
+  }
+}
