@@ -246,7 +246,7 @@ def main():
                 )
                 return response.choices[0].message["content"]
 
-            ext_text = get_text_from_any_pdf(uploaded_file.name) 
+            ext_text = get_text_from_any_pdf(uploaded_file.name, poppler_path) 
 
 
             input_text = f""" Your task is to convert the data into json format
