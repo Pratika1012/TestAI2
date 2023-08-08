@@ -225,7 +225,7 @@ def main():
 
             def get_text_from_any_pdf(pdf_file, path):
                 
-                images = convert_pdf_to_img(pdf_file, poppler_path = path)
+                images = convert_pdf_to_img(pdf_file, path)
                 final_text = ""
                 for pg, img in enumerate(images):
                     
