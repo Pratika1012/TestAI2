@@ -9,7 +9,7 @@ import pytesseract
 import os
 
 # Set the path to the 'bin' directory within the 'poppler' folder
-poppler_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "poppler-23.07.0", "Library", "bin")
+poppler_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "poppler-23.07.0", "Library", "bin", "pdftoppm.exe")
 
 # Add the poppler_path to the environment's PATH
 os.environ["PATH"] += os.pathsep + poppler_path
