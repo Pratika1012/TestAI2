@@ -8,6 +8,15 @@ from pytesseract import image_to_string
 import pytesseract
 import os
 
+# Set the path to the 'bin' directory within the 'poppler' folder
+poppler_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "poppler-23.07.0", "Library", "bin")
+
+# Add the poppler_path to the environment's PATH
+os.environ["PATH"] += os.pathsep + poppler_path
+
+# Now you can use poppler_path in your code
+
+
 with st.sidebar:
     openai.api_key = st.text_input("Add your OpenAI API key", type = "password")
 
