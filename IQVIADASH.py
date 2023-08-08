@@ -215,7 +215,7 @@ def main():
             # chat_interface(extracted_text)
 
             def convert_pdf_to_img(pdf_file):
-                return convert_from_path(pdf_file, path)
+                return convert_from_path(pdf_file, poppler_path)
 
 
             def convert_image_to_text(file):  
@@ -223,7 +223,7 @@ def main():
                 return text
 
 
-            def get_text_from_any_pdf(pdf_file, path):
+            def get_text_from_any_pdf(pdf_file):
                 
                 images = convert_pdf_to_img(pdf_file)
                 final_text = ""
@@ -246,7 +246,7 @@ def main():
                 )
                 return response.choices[0].message["content"]
 
-            ext_text = get_text_from_any_pdf(uploaded_file.name, poppler_path) 
+            ext_text = get_text_from_any_pdf(uploaded_file.name) 
 
 
             input_text = f""" Your task is to convert the data into json format
