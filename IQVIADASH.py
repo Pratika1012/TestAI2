@@ -3,7 +3,7 @@ import openai
 import fitz
 import json
 import PyPDF2
-from pdf2image import convert_from_path
+from pdf2image import convert_from_path,convert_from_bytes
 from pytesseract import image_to_string 
 import pytesseract
 import os
