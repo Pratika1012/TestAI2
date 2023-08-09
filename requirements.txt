@@ -1,4 +1,4 @@
-﻿poppler==23.07.0
+python-poppler==23.07.0
 python-dotenv==1.0.0
 
 faiss-cpu==1.7.4
