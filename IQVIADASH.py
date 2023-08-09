@@ -227,23 +227,23 @@ def main():
             # tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
         
             # Save the image temporarily
-            image_path = 'temp_image.png'
-            image.save(image_path, 'PNG')
-        
-            # Perform OCR using Tesseract
-            cmd = [tesseract_exe_path, image_path, 'stdout', '-l', 'eng']  # Adjust language as needed
-            result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        
-            if result.returncode == 0:
-                extracted_text = result.stdout
-            else:
-                error_message = result.stderr
-                extracted_text = f"Error: {error_message}\n"
-        
-            # Delete the temporary image
-            os.remove(image_path)
-        
-            return extracted_text
+                image_path = 'temp_image.png'
+                image.save(image_path, 'PNG')
+            
+                # Perform OCR using Tesseract
+                cmd = [tesseract_exe_path, image_path, 'stdout', '-l', 'eng']  # Adjust language as needed
+                result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            
+                if result.returncode == 0:
+                    extracted_text = result.stdout
+                else:
+                    error_message = result.stderr
+                    extracted_text = f"Error: {error_message}\n"
+            
+                # Delete the temporary image
+                os.remove(image_path)
+            
+                return extracted_text
 
 
             def get_text_from_any_pdf(pdf_file):
