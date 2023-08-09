@@ -5,6 +5,7 @@ import json
 import PyPDF2
 from pdf2image import convert_from_path,convert_from_bytes
 from pytesseract import image_to_string 
+from PIL import Image
 import pytesseract
 import os
 
@@ -14,8 +15,9 @@ import os
 with st.sidebar:
     openai.api_key = st.text_input("Add your OpenAI API key", type = "password")
 
-# poppler_path = r'poppler-23.07.0/Library/bin'
-# pytesseract.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
+poppler_path = r'C:\path\to\poppler-23.07.0\Library\bin'
+pytesseract.pytesseract.tesseract_cmd = r'C:\path\to\Tesseract-OCR\tesseract.exe'
+
 
 def get_completion(prompt, model="gpt-3.5-turbo-16k"):
     messages = [{"role": "user", "content": prompt}]
@@ -209,10 +211,9 @@ def main():
             # chat_interface(extracted_text)
             
             def convert_pdf_to_img(pdf_file):
-                poppler_path = r'poppler-23.07.0\Library\bin' 
-                pytesseract.pytesseract.tesseract_cmd = r'Tesseract-OCR\tesseract.exe' 
-                return convert_from_path(pdf_file, poppler_path=poppler_path)
-
+                images = convert_from_path(pdf_path, poppler_path=poppler_path)
+                return images
+                
         
             def convert_image_to_text(file):  
                     text = image_to_string(file)
