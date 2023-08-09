@@ -211,7 +211,7 @@ def main():
             # chat_interface(extracted_text)
             
             def convert_pdf_to_img(pdf_file):
-                images = convert_from_path(pdf_path, poppler_path=poppler_path)
+                images = convert_from_path(pdf_file, poppler_path=poppler_path)
                 return images
                 
         
