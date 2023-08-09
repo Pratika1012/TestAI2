@@ -9,7 +9,7 @@ import pytesseract
 import os
 
 # Set the path to the 'bin' directory within the 'poppler' folder
-poppler_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "poppler-23.07.0", "Library", "bin", "pdftoppm.exe")
+# poppler_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "poppler-23.07.0", "Library", "bin", "pdftoppm.exe")
 
 # Add the poppler_path to the environment's PATH
 os.environ["PATH"] += os.pathsep + poppler_path
@@ -21,7 +21,7 @@ with st.sidebar:
     openai.api_key = st.text_input("Add your OpenAI API key", type = "password")
 
 poppler_path = r'poppler-23.07.0/Library/bin'
-pytesseract.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
+# pytesseract.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
 
 def get_completion(prompt, model="gpt-3.5-turbo-16k"):
     messages = [{"role": "user", "content": prompt}]
@@ -215,7 +215,7 @@ def main():
             # chat_interface(extracted_text)
 
             def convert_pdf_to_img(pdf_file):
-                return convert_from_path(pdf_file, poppler_path)
+                return convert_from_path(pdf_file)
 
 
             def convert_image_to_text(file):  
