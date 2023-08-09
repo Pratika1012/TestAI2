@@ -218,6 +218,7 @@ def main():
                 # Convert PDF to images using pdf2image
                 poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
                 images = convert_from_path(pdf_file, poppler_path=poppler_bin_path)
+                os.environ["PATH"] += os.pathsep + poppler_bin_path
                 return images
 
 
