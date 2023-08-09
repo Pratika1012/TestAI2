@@ -209,10 +209,11 @@ def main():
             # chat_interface(extracted_text)
             
             def convert_pdf_to_img(pdf_file):
-                
-                return convert_from_path(pdf_file,poppler_path=r'poppler-23.07.0/Library/bin')
+                poppler_path = r'C:\path\to\poppler-23.07.0\Library\bin' 
+                pytesseract.pytesseract.tesseract_cmd = r'C:\path\to\Tesseract-OCR\tesseract.exe' 
+                return convert_from_path(pdf_file, poppler_path=poppler_path)
 
-
+        
             def convert_image_to_text(file):  
                     text = image_to_string(file)
                     return text
