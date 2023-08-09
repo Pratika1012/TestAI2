@@ -214,51 +214,26 @@ def main():
             # Display the file details (optional)
             # chat_interface(extracted_text)
             
-            def convert_pdf_to_img(pdf_file):
-                # Convert PDF to images using pdf2image
-                poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
-                tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
-                images1 = convert_from_path(pdf_file)
-
-                return images1
+              def convert_pdf_to_img(pdf_file):
+                return convert_from_path(pdf_file, poppler_path=poppler_path)
 
 
-            def extract_text_from_image(image):
-                # Path to Tesseract executable (you might need to adjust the filename for different OS)
-                # tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+              def convert_image_to_text(file):  
+                    text = image_to_string(file)
+                    return text
+
+              def get_text_from_any_pdf(pdf_file):
                 
-                # Save the image temporarily
-                image_path = 'temp_image.png'
-                image.save(image_path, 'PNG')
-            
-                # Perform OCR using Tesseract
-                cmd = [tesseract_exe_path, image_path, 'stdout', '-l', 'eng']  # Adjust language as needed
-                result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            
-                if result.returncode == 0:
-                    extracted_text = result.stdout
-                else:
-                    error_message = result.stderr
-                    extracted_text = f"Error: {error_message}\n"
-            
-                # Delete the temporary image
-                os.remove(image_path)
-            
-                return extracted_text
-
-
-            def get_text_from_any_pdf(pdf_file):
-                
-                images = convert_pdf_to_img(pdf_file)
-                final_text = ""
-                for pg, img in enumerate(images):
+                    images = convert_pdf_to_img(pdf_file)
+                    final_text = ""
+                    for pg, img in enumerate(images):
+                        
+                        final_text += convert_image_to_text(img)
+                        #print("Page n°{}".format(pg))
+                        #print(convert_image_to_text(img))
                     
+                    return final_text
                     
-                    extracted_text = extract_text_from_image(img)
-                    final_text += extracted_text
-
-                return final_text
-                
                 
 
 
