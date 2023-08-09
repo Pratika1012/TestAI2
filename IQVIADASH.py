@@ -215,18 +215,17 @@ def main():
             # chat_interface(extracted_text)
 
             def convert_pdf_to_img(pdf_file):
-    # Convert PDF to images using pdf2image
-             images = convert_from_path(pdf_file)
-             poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
-             tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
-            return images
+                # Convert PDF to images using pdf2image
+                poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
+                images = convert_from_path(pdf_file, poppler_path=poppler_bin_path)
+                return images
 
 
             def extract_text_from_image(image):
-            # Path to Tesseract executable (you might need to adjust the filename for different OS)
-            # tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
-        
-            # Save the image temporarily
+                # Path to Tesseract executable (you might need to adjust the filename for different OS)
+                tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+                
+                # Save the image temporarily
                 image_path = 'temp_image.png'
                 image.save(image_path, 'PNG')
             
