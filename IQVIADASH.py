@@ -15,8 +15,8 @@ import os
 with st.sidebar:
     openai.api_key = st.text_input("Add your OpenAI API key", type = "password")
 
-poppler_path = r'C:\path\to\poppler-23.07.0\Library\bin'
-pytesseract.pytesseract.tesseract_cmd = r'C:\path\to\Tesseract-OCR\tesseract.exe'
+poppler_path =  r'/app/.heroku/poppler-23.07.0/Library/bin'
+pytesseract.pytesseract.tesseract_cmd = '/app/.heroku/tesseract'
 
 
 def get_completion(prompt, model="gpt-3.5-turbo-16k"):
