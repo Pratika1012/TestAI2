@@ -213,11 +213,11 @@ def main():
             # Chat interface
             # Display the file details (optional)
             # chat_interface(extracted_text)
-            tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+            
             def convert_pdf_to_img(pdf_file):
                 # Convert PDF to images using pdf2image
                 poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
-                # tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+                tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
                 images1 = convert_from_path(pdf_file)
 
                 return images1
