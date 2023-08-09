@@ -209,9 +209,8 @@ def main():
             # chat_interface(extracted_text)
             
             def convert_pdf_to_img(pdf_file):
-                poppler_path = r'poppler-23.07.0/Library/bin'
-                pytesseract.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
-                return convert_from_path(pdf_file,poppler_path)
+                
+                return convert_from_path(pdf_file,poppler_path=r'poppler-23.07.0/Library/bin')
 
 
             def convert_image_to_text(file):  
@@ -220,7 +219,7 @@ def main():
 
             def get_text_from_any_pdf(pdf_file):
                 
-                    images = convert_pdf_to_img(pdf_file)
+                    images = convert_pdf_to_img(pdf_file,poppler_path=r'poppler-23.07.0/Library/bin')
                     final_text = ""
                     for pg, img in enumerate(images):
                         
