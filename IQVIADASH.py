@@ -217,14 +217,13 @@ def main():
             def convert_pdf_to_img(pdf_file):
                 # Convert PDF to images using pdf2image
                 poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
-                images = convert_from_path(pdf_file, poppler_path=poppler_bin_path)
-                os.environ["PATH"] += os.pathsep + poppler_bin_path
+                tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
                 return images
 
 
             def extract_text_from_image(image):
                 # Path to Tesseract executable (you might need to adjust the filename for different OS)
-                tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+                # tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
                 
                 # Save the image temporarily
                 image_path = 'temp_image.png'
