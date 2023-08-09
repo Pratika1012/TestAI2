@@ -20,7 +20,7 @@ import os
 with st.sidebar:
     openai.api_key = st.text_input("Add your OpenAI API key", type = "password")
 
-poppler_path = r'poppler-23.07.0/Library/bin'
+# poppler_path = r'poppler-23.07.0/Library/bin'
 # pytesseract.pytesseract.tesseract_cmd = 'Tesseract-OCR/tesseract.exe'
 
 def get_completion(prompt, model="gpt-3.5-turbo-16k"):
@@ -215,12 +215,35 @@ def main():
             # chat_interface(extracted_text)
 
             def convert_pdf_to_img(pdf_file):
-                return convert_from_path(pdf_file)
+    # Convert PDF to images using pdf2image
+            images = convert_from_path(pdf_file)
+             poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
+             tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+            return images
 
 
-            def convert_image_to_text(file):  
-                text = image_to_string(file)
-                return text
+            def extract_text_from_image(image):
+            # Path to Tesseract executable (you might need to adjust the filename for different OS)
+            tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+        
+            # Save the image temporarily
+            image_path = 'temp_image.png'
+            image.save(image_path, 'PNG')
+        
+            # Perform OCR using Tesseract
+            cmd = [tesseract_exe_path, image_path, 'stdout', '-l', 'eng']  # Adjust language as needed
+            result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        
+            if result.returncode == 0:
+                extracted_text = result.stdout
+            else:
+                error_message = result.stderr
+                extracted_text = f"Error: {error_message}\n"
+        
+            # Delete the temporary image
+            os.remove(image_path)
+        
+            return extracted_text
 
 
             def get_text_from_any_pdf(pdf_file):
@@ -230,10 +253,12 @@ def main():
                 for pg, img in enumerate(images):
                     
                     final_text += convert_image_to_text(img)
-                    #print("Page n°{}".format(pg))
-                    #print(convert_image_to_text(img))
-                
+                   extracted_text = extract_text_from_image(img)
+                   final_text += extracted_text
+
                 return final_text
+                
+                
 
 
 
