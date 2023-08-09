@@ -214,15 +214,15 @@ def main():
             # Display the file details (optional)
             # chat_interface(extracted_text)
             
-              def convert_pdf_to_img(pdf_file):
+            def convert_pdf_to_img(pdf_file):
                 return convert_from_path(pdf_file, poppler_path=poppler_path)
 
 
-              def convert_image_to_text(file):  
+            def convert_image_to_text(file):  
                     text = image_to_string(file)
                     return text
 
-              def get_text_from_any_pdf(pdf_file):
+            def get_text_from_any_pdf(pdf_file):
                 
                     images = convert_pdf_to_img(pdf_file)
                     final_text = ""
