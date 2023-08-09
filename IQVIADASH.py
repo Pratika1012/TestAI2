@@ -224,7 +224,7 @@ def main():
 
             def extract_text_from_image(image):
             # Path to Tesseract executable (you might need to adjust the filename for different OS)
-            tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
+            # tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
         
             # Save the image temporarily
             image_path = 'temp_image.png'
