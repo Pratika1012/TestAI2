@@ -1,26 +1,25 @@
-python-poppler==23.07.0
-python-dotenv==1.0.0
+poppler
 
-faiss-cpu==1.7.4
+faiss-cpu
 
-openai==0.27.7
+openai
 
-pdf2image==1.16.3
+pdf2image
 
-pdfplumber==0.10.0
-pdfrw==0.4
-pdfrw2==0.5.0
-pdftopng==0.2.3
+pdfplumber
+pdfrw
+pdfrw2
+pdftopng
 
-PyMuPDF==1.22.5
+PyMuPDF
 
-pypdf==3.12.2
-PyPDF2==3.0.1
+pypdf
+PyPDF2
 
-pytesseract==0.3.10
-pytest==7.1.2
+pytesseract
+pytest
 
-streamlit==1.23.1
+streamlit
 
-tabula==1.0.5
-tabula-py==2.7.0
+tabula
+tabula-py
