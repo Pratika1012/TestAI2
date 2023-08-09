@@ -216,7 +216,7 @@ def main():
 
             def convert_pdf_to_img(pdf_file):
     # Convert PDF to images using pdf2image
-            images = convert_from_path(pdf_file)
+             images = convert_from_path(pdf_file)
              poppler_bin_path = os.path.join(os.path.dirname(__file__), 'poppler', 'bin')
              tesseract_exe_path = os.path.join(os.path.dirname(__file__), 'tesseract', 'tesseract.exe')
             return images
@@ -253,8 +253,8 @@ def main():
                 for pg, img in enumerate(images):
                     
                     final_text += convert_image_to_text(img)
-                   extracted_text = extract_text_from_image(img)
-                   final_text += extracted_text
+                    extracted_text = extract_text_from_image(img)
+                    final_text += extracted_text
 
                 return final_text
                 
