@@ -217,9 +217,9 @@ def main():
                     text = image_to_string(file)
                     return text
 
-            def get_text_from_any_pdf(pdf_file):
+            def get_text_from_any_pdf(pdf_file,poppler_path=r'poppler-23.07.0/Library/bin'):
                 
-                    images = convert_pdf_to_img(pdf_file,poppler_path=r'poppler-23.07.0/Library/bin')
+                    images = convert_pdf_to_img(pdf_file)
                     final_text = ""
                     for pg, img in enumerate(images):
                         
